@@ -1,7 +1,7 @@
 # Credit-Card-Fraud-Detection-with-Random-Forest-Classifier
 This project implementations a fraud detection system for credit card transactions using a Random Forest Classifier.
 
-### Overview
+## Overview
 The goal of this project is indentify fraudulent transactions while minimizing false positives (non-fraudulent transactions flagged as fraud) and false negatives (missed fraudulent transations). The project includes bahavorial analysis, fearture engineering, model training, cost-sensitive threshold optimization, and model interpretatbility using SHAP values.
 
 The whole dataset used is https://www.kaggle.com/datasets/priyamchoksi/credit-card-transactions-dataset/ containning 1,296,675 transactions with 24 columns from 2019-01-01 to 2020-06-21, including transaction details, cardholder information, and fraud lables. The dataset is highly imbalanced with approximately 0.58% of transactions labled as fraudulent (is_fruad = 1). I use only 924,850 stransaction 2019-01-01 to 2019-12-31 to analysis month and season trends.
@@ -15,7 +15,7 @@ The whole dataset used is https://www.kaggle.com/datasets/priyamchoksi/credit-ca
 
 - Provide insights for stakeholders using visualizations (when, where, who and how credit-card transaction behavior)
 
-### Dataset
+## Dataset
 - trans_date_trans_time is the data and time of the transactions
 - cc_num is the credit card number 
 - merchant is the merchant name or store name where the transaction occurred
@@ -42,9 +42,9 @@ The whole dataset used is https://www.kaggle.com/datasets/priyamchoksi/credit-ca
 - Fraudlendent transaction: 5,220 (0.56%)
 - Non-fraudulent transaction: 919,630 (99.46%)
 
-### Methodology
+## Methodology
 
-#### Feature Engineering
+### Feature Engineering
 
 The following features were engineered to capture behavioral patterns:
 - hour: Hour of the transaction, extracted from trans_date_trans_time.
@@ -58,17 +58,17 @@ The following features were engineered to capture behavioral patterns:
 - spending_category: Categorical bins of transaction amount (Very Low, Low, Medium, High Medium, High).
 - population_category: Categorical bins of city population.
 
-#### Data Preprocessing
+### Data Preprocessing
 - Scaling: Numerical features standardized using StandardScaler.
 - Train-Test Split: 80% training, 20% testing with stratification to maintain fraud ratio.
 - Imbalance Handling: Used class_weight='balanced' in Random Forest to address the 0.56% fraud rate.
 
-#### Model Training
+### Model Training
 - Model: Random Forest Classifier (max_depth=20, min_samples_leaf=10, n_estimators=100, class_weight='balanced').
 - Cross-Validation: 5-fold stratified cross-validation with F1-score metric.
 - Threshold Optimization: Cost-sensitive threshold tuning with false negative cost = $530 + $10 and false positive cost = $10.
 
-#### Feature Importance: Analyzed using Random Forest's built-in feature importances.
+### Feature Importance: Analyzed using Random Forest's built-in feature importances.
 
 SHAP Values: Computed using the SHAP library to interpret feature contributions to fraud predictions, visualized with a summary plot.
 
