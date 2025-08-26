@@ -176,3 +176,8 @@ SHAP Values: Computed using the SHAP library to interpret feature contributions 
 
 
 <img width="787" height="940" alt="Image" src="https://github.com/user-attachments/assets/2b3ed15f-9232-4db7-b803-83527fc4c444" />
+
+
+## Author
+
+Thanh Xuyen Nguyen https://www.linkedin.com/in/xuyen-thanh-nguyen-0518/
