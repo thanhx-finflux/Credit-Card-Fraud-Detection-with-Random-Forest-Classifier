@@ -78,7 +78,7 @@ SHAP Values: Computed using the SHAP library to interpret feature contributions 
 
 <img width="846" height="545" alt="Image" src="https://github.com/user-attachments/assets/7890786c-8cc9-48eb-ba5e-60fab749569f" />
 
-
+```
 | Classification Report for Threshold 0.9620:           |
 |-------------------------------------------------------|
 |               precision    recall  f1-score   support |
@@ -123,13 +123,13 @@ SHAP Values: Computed using the SHAP library to interpret feature contributions 
 |  [   350    694]]                                     |
 |-------------------------------------------------------|
 
-
+```
 - Optimal Threshold for Cost Minimization: 0.4925
 
 
 <img width="833" height="545" alt="Image" src="https://github.com/user-attachments/assets/c472f0a3-f33e-4504-aa01-67b623c26bf2" />
 
-
+```
 | Random Forest Training Classification Report with Cost Threshold: |
 |-------------------------------------------------------------------|
 |               precision    recall  f1-score   support             |
@@ -161,6 +161,7 @@ SHAP Values: Computed using the SHAP library to interpret feature contributions 
 | [[179636   4290]                                                  |
 |  [    74    970]]                                                 |
 |-------------------------------------------------------------------|
+```
 
 - Total cost without Model: $2,403,264.57
   
@@ -177,7 +178,33 @@ SHAP Values: Computed using the SHAP library to interpret feature contributions 
 
 <img width="787" height="940" alt="Image" src="https://github.com/user-attachments/assets/2b3ed15f-9232-4db7-b803-83527fc4c444" />
 
+## Key findings
+1. Hourly trends indicate peak transaction times from 12 PM to 11 PM, with higher average transaction amounts during late night hours (10 PM to 2 AM). Fraudulent activities are more likely to occur during late-night hours (10 PM to 3 AM).
+2. Daily trends show the highest transaction counts on Mondays and Sundays, with average amounts peaking on Thursdays. Fraudulent activities are more prevalent on Fridays, Tuesdays, and Wednesdays.
+3. Monthly trends reveal a significant increase in transactions during December, likely due to holiday shopping. Fraudulent activity peaks in February and is lowest in July.
+4. Merchant analysis identifies gas transportation and grocery stores as top merchants by transaction count, while shopping net has the highest fraudulent transaction rate (1.73%).
+5. Geographic analysis shows that cities like Hubbell and Byesville have 100% fraudulent transaction rates, while high transaction count cities tend to have lower fraud rates.
+6. The states with high transaction counts, such as CA and TX, exhibit lower average transaction amounts and fraudulent rates. In contrast, states with low transaction counts, such as DE and RI, exhibit high average transaction amounts and fraudulent rates.
+7. Population analysis indicates that rural areas have the highest transaction counts, while metropolitan areas have higher average transaction amounts. Fraudulent rates are highest in mid-sized cities (50,000-100,000 population).
+8. Demographic analysis indicates that the 25-34 age group has the highest transaction count, while fraudulent activities are more common among younger (under 18) and older (55 and older) age groups.
+9. Female cardholders exhibit higher transaction counts, while male cardholders exhibit a higher fraudulent transaction rate (0.6%) compared to female cardholders (0.5%).
+10. Job title analysis reveals that film/video editors have the highest transaction counts, while information officers and ship brokers exhibit 100% fraudulent transaction rates.
+11. Spending behavior analysis shows that most transactions fall within the 50-100 USD range, while high-value transactions (over 500 USD) have the highest fraudulent rates (22.8%).
+1. The Random Forest Classifier demonstrates strong recall (0.93) but low precision (0.19), indicating effective fraud detection but a high false positive rate. Stratified k-fold cross-validation confirms consistent performance across folds.
+2. Optimal decision thresholds are identified to balance precision and recall, with a threshold of 0.9620 minimizing overall costs associated with false negatives and false positives.
+3. Cost analysis suggests significant savings (96.55%) by implementing the model with the optimal threshold, reducing financial losses from fraud and investigation costs.
+4. SHAP and feature importance analyses highlight key features influencing fraud predictions, aiding interpretability and model transparency.
 
-## Author
+## Future Work
+1. Explore advanced ensemble methods or deep learning techniques to improve fraud detection performance.
+2. Investigate the impact of external factors (e.g., economic indicators, social media trends) on fraudulent activities.
+3. Develop real-time fraud detection systems for proactive monitoring and response.
+4. Conduct user studies to understand the implications of fraud detection systems on user experience and privacy.
 
-Thanh Xuyen Nguyen https://www.linkedin.com/in/xuyen-thanh-nguyen-0518/
+### Contact
+
+Thanh Xuyen, Nguyen
+
+LinkedIn: [xuyen-thanh-nguyen-0518](https://www.linkedin.com/in/xuyen-thanh-nguyen-0518/)
+
+Email: thanhxuyen.nguyen@outlook.com
